@@ -1,0 +1,14 @@
+##Create vectors a and s
+s <- c()
+a <- c(1, 1, 1, 2, 0, 3, 1, 5, 8, 4)
+##Initiate loop
+for(i in 2:length(a)) {
+##Describe condition under which to run loop
+  if(a[i] %% 2 == a[i-1] %% 2) {
+##Define what should be run and add all runs to s
+    s <- append(s, max(a[i], a[i-1]))
+  }
+}
+##After loop is done, take s and open URL extended by s
+browseURL(paste("https://www.multisoft.se/", paste(as.character(s),collapse=""), 
+            sep=""))
